@@ -1,0 +1,11 @@
+This project can be built using make
+
+flags:
+    -p (PORT): set the port to listen on
+    -connect (IP:PORT): connect to node with ip and port formatted ip:port (ex. 127.0.0.1:1234)
+    -q (FILENAME): query for a file based on its name after joining network (ex. hello.txt)
+
+The default sleep time is 60 seconds and if a node does not ping after 2x the sleep time then it is dropped
+The default TTL for requests is 5
+The files are read from and written to ../files/(port number)
+Instead of implementing a query hit, the query contains the ip and port of the node and opens a tcp connection to it to send the file
